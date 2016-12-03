@@ -1,0 +1,18 @@
+> half-space setting does not work
+
+//***************************************************************************
+// TODO:  (original list from Nic Wilson)
+// If you are feeling adventurous, 
+// these are some of the things I would like to see.
+// Feel free to post me the code and I will add the best to the class and 
+// give you credit for it here.
+// 
+// > Optional pixel scrolling rather than character scrolling, 
+//   maybe with ScrollWindowEx()
+// > Some extra character graphic bitmaps
+// > An intelligent resizing routine for the characters.
+// > Any improvements you can think of.
+// 
+// See the project example for a working demonstration.
+//***************************************************************************
+
