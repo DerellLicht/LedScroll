@@ -66,7 +66,7 @@ $(BIN).exe: $(OBJS)
 	$(BASE_PATH)g++ $(CFLAGS) $(LFLAGS) $(OBJS) -o $@ $(LIBS)
 
 rc.o: $(BIN).rc 
-	$(BASE_PATH)windres $< -O coff -o $@
+	windres $< -O COFF -o $@
 
 # DO NOT DELETE
 
