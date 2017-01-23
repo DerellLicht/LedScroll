@@ -23,6 +23,10 @@ typedef unsigned long long    u64 ;
 #define  LF       10
 #define  SPC      32
 
+#ifndef PATH_MAX
+#define PATH_MAX  260
+#endif
+
 //  define bounds of printable ASCII characters
 #define  FIRST_PCHAR  32
 #define  LAST_PCHAR   126
@@ -122,11 +126,11 @@ typedef struct DLGTEMPLATEEX_s {
 } DLGTEMPLATEEX, *LPDLGTEMPLATEEX; 
 
 // #define PSN_FIRST                (0U-200U)
-#define  PSN_GETOBJECT               (-210)
-#define  PSN_TRANSLATEACCELERATOR    (-212)
-#define  PSN_QUERYINITIALFOCUS       (-213)
+// #define  PSN_GETOBJECT               (-210)
+// #define  PSN_TRANSLATEACCELERATOR    (-212)
+// #define  PSN_QUERYINITIALFOCUS       (-213)
 
-#define  LVN_HOTTRACK                (-121)
+/* #define  LVN_HOTTRACK                (-121) */
 
 //*************************************************************
 inline void delay_ms(uint msec)

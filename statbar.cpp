@@ -131,14 +131,15 @@ bool CStatusBar::IsStatusBarVisible(void)
 {
    if (hwndStatusBar == 0)
       return false ;
-   return IsWindowVisible (hwndStatusBar) ;  //lint !e1786
+   return (IsWindowVisible (hwndStatusBar) == 0) ? false : true ;  //lint !e1786
 }
 
 //-------------------------------------------------------------------
 bool CStatusBar::SetParts(int nParts, int *sbparts)
 {
-   return SendMessageA(hwndStatusBar, SB_SETPARTS, 
+   LRESULT lresult = SendMessageA(hwndStatusBar, SB_SETPARTS, 
       (WPARAM) nParts, (LPARAM) (LPINT) sbparts) ;  //lint !e1786
+   return (lresult == 0) ? false : true ;
 }
 
 //-------------------------------------------------------------------

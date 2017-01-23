@@ -1,3 +1,10 @@
 CodeProject/*
 *.o
 *.exe
+Debug/
+*/Debug/
+*/*/Debug/
+*/*/*/Debug/
+*/Debug/*
+*/*/Debug/*
+*/*/*/Debug/*

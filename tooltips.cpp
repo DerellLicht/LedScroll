@@ -2,16 +2,16 @@
 //  Copyright (c) 2008-2014  Daniel D Miller
 //  tooltips.cpp - tooltip functions/data
 //
-//  Written by:  Dan Miller
+//  Written by:  Dan Miller 
 //****************************************************************************
 //  Usage:
 //    HWND hToolTip = create_tooltips(hwnd, 150, 100, 10000) ;
 //    add_program_tooltips(hwnd, hToolTip) ;
 //****************************************************************************
 
+#include "targetver.h"
 #include <windows.h>
 #include <tchar.h>
-#define  _WIN32_IE   0x0501
 #include <commctrl.h>
 
 #include "resource.h"
@@ -53,8 +53,8 @@ static void add_tooltip_target(HWND parent, HWND target, HWND hToolTip, TCHAR *m
    ti.hwnd = parent;
    ti.uId = (UINT) target;
    ti.lpszText = msg ;
-   bool bresult = SendMessage(hToolTip, TTM_ADDTOOL, 0, (LPARAM)&ti);
-   if (!bresult) {
+   LRESULT bresult = SendMessage(hToolTip, TTM_ADDTOOL, 0, (LPARAM)&ti);
+   if (bresult == 0) {
       syslog("TTM_ADDTOOL: %u: %s\n", target, get_system_message()) ;
    }
 }

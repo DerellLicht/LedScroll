@@ -36,12 +36,12 @@ int fontmgr::read_font_file(char *fname)
 
    ZeroMemory(user_font, sizeof(user_font)) ;
 
-   int fhdl = open(fname, O_RDONLY | O_BINARY) ;
+   int fhdl = _open(fname, O_RDONLY | O_BINARY) ;
    if (fhdl < 0) {
       syslog("%s open: %s\n", fname, get_system_message()) ;
       return -1 ;
    }
-   int rbytes = read(fhdl, font_bfr, sizeof(font_bfr)) ;
+   int rbytes = _read(fhdl, font_bfr, sizeof(font_bfr)) ;
    if (rbytes < 0) {
       syslog("%s read: %s\n", fname, get_system_message()) ;
       return -1 ;
@@ -53,7 +53,7 @@ int fontmgr::read_font_file(char *fname)
       return -1 ;
    }
    user_points = rbytes / 256;
-   close(fhdl) ;
+   _close(fhdl) ;
 
    //  read font into our user font table
    u8 *fptr = &font_bfr[0];

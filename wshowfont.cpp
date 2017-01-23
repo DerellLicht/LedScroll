@@ -11,6 +11,7 @@
 
 static char const * const Version = "wShowFont, Version 1.00" ;
 
+#include "targetver.h"
 #include <windows.h>
 #include <stdio.h>
 #include <math.h>
