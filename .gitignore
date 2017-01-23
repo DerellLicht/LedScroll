@@ -1,6 +1,10 @@
 CodeProject/*
 *.o
 *.exe
+**.sdf
+**.suo
+**/*.sdf
+**/*.suo
 Debug/
 */Debug/
 */*/Debug/
