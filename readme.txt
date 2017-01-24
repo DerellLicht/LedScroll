@@ -18,3 +18,21 @@ The matrixstatic class (matrixstatic.cpp, matrixstatic.h) are:
 // Version: 1.0 November 2002
 //****************************************************************************
 
+###############################################################
+Building the project
+
+> With MinGW (I used V4.4.1)
+In the main project directory, type "make"
+
+> With Visual Studio 2010
+Open LedScroll\LedScroll.sln and build
+
+###############################################################
+Accessing font files from the demo program.
+
+The program expects to find these files in ..\fntcol relative
+to the location of the executable file.
+
+The font files can be obtained from my github:
+git clone https://github.com/DerellLicht/fntcol.git
+
