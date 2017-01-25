@@ -1,4 +1,5 @@
 CodeProject/*
+_lint.tmp
 *.o
 *.exe
 *.zip

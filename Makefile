@@ -1,3 +1,4 @@
+SHELL=cmd.exe
 USE_DEBUG = NO
 USE_STATIC = NO
 USE_WINMSGS = NO
@@ -54,7 +55,7 @@ source:
 	zip $(BIN).src.zip *
 
 lint:
-	cmd /C "c:\lint9\lint-nt +v -width(160,4) $(LiFLAGS) -ic:\lint9 -i../der_libs mingw.lnt -os(_lint.tmp) lintdefs.cpp $(CSRC)"
+	cmd /C "c:\lint9\lint-nt +v -width(160,4) $(LiFLAGS) -ic:\lint9 mingw.lnt -os(_lint.tmp) lintdefs.cpp $(CSRC)"
 
 depend:
 	makedepend $(CFLAGS) $(CSRC)

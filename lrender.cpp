@@ -9,6 +9,8 @@
 //**************************************************************************
 #include <windows.h>
 
+//lint -esym(1762, lrender::draw_element)
+
 #include "common.h"
 #include "fontmgr.h"
 #include "lrender.h"

@@ -200,7 +200,7 @@ void CStatusBar::StatusBarMessage(WORD wMsg)
       wsprintfA (ach, "Horiz Width = %d\n"
          "Vert Width = %d\n"
          "Separator Width = %d",
-         aiBorders[0], aiBorders[1], aiBorders[2]);
+         aiBorders[0], aiBorders[1], aiBorders[2]);  //lint !e530
       OutputDebugStringA(ach) ;
       break;
       }

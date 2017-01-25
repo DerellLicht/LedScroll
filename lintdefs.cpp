@@ -5,6 +5,8 @@
 //lint -e755   global macro not referenced
 //lint -e534   Ignoring return value of function
 
+//lint -esym(767, _WIN32_WINNT)
+
 //lint -e818   Pointer parameter could be declared as pointing to const
 //lint -e840   Use of nul character in a string literal
 //lint -e845   The right argument to operator '||' is certain to be 0 

@@ -57,7 +57,7 @@ static void add_tooltip_target(HWND parent, HWND target, HWND hToolTip, TCHAR *m
    if (bresult == 0) {
       syslog("TTM_ADDTOOL: %u: %s\n", target, get_system_message()) ;
    }
-}
+}  //lint !e550  ti
 
 //****************************************************************************
 //  CommPort dialog tooltips
