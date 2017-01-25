@@ -47,7 +47,7 @@ clean:
 
 dist:
 	rm -f $(BIN).zip
-	zip $(BIN).zip $(BIN).exe *.f* readme.txt
+	zip -r $(BIN).zip $(BIN).exe *.f* fntcol\* readme.txt
 
 source:
 	rm -f $(BIN).src.zip

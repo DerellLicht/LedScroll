@@ -1,6 +1,7 @@
 CodeProject/*
 *.o
 *.exe
+*.zip
 **.sdf
 **.suo
 **/*.sdf

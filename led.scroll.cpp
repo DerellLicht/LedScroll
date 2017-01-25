@@ -70,19 +70,19 @@ static CMatrixStatic *m_lcd_lrender;
 static CMatrixStatic *m_lcd_clock;
 
 static led_data_t led_left = {
-   IDC_LCDLEFT, "Scrl Left..", "..\\fntcol\\readable.f08", 3, 1, 1, SQUARE_PIXELS, 
+   IDC_LCDLEFT, "Scrl Left..", "fntcol\\readable.f08", 3, 1, 1, SQUARE_PIXELS, 
    13, 1, 10, MBD_LEFT, true, '!', RGB(0, 0, 0), RGB(255, 60, 0), RGB(103, 30, 0)
 } ;
 
 static led_data_t led_right = {
-   IDC_LCDRIGHT, "Scrl Right..", "..\\fntcol\\readable.f08", 3, 1, 1, ROUND_PIXELS, 
+   IDC_LCDRIGHT, "Scrl Right..", "fntcol\\readable.f08", 3, 1, 1, ROUND_PIXELS, 
    13, 1, 3, MBD_RIGHT, true, 0, RGB(0, 103, 30), RGB(0, 255, 50), RGB(0, 103, 30)
 } ;
 
 static led_data_t led_ssmall = {
    IDC_MATRIXSMALL, " !\"#$%&'()*+,-./0123456789;:<=>?"
                     "@ABCDEFGHIJKLMNO PQRSTUVWXYZ[\\]^"
-                    "_`abcdefghijklmnopqrstuvwxyz{|}~", "..\\fntcol\\cp437.f14",
+                    "_`abcdefghijklmnopqrstuvwxyz{|}~", "fntcol\\cp437.f14",
                      2, 0, 0, SQUARE_PIXELS, 32, 3, 4, MBD_RIGHT, false, 0,
                      DEFAULT_BGND, DEFAULT_SET, DEFAULT_CLEAR
 } ;
@@ -93,7 +93,7 @@ static led_data_t led_scrl_up = {
                  " by  Nic Wilson "
                  " and Dan Miller "
                  "----------------"
-                 "                ", "..\\fntcol\\script1.f14", 
+                 "                ", "fntcol\\script1.f14", 
                   1, 0, 0, SQUARE_PIXELS, 16, 3, 6, MBD_UP, false, 0,
                   RGB(165, 181, 66), RGB(0, 0, 0), RGB(148, 156, 66)
 } ;
@@ -101,13 +101,13 @@ static led_data_t led_scrl_up = {
 static led_data_t led_scrl_down = {
    IDC_MATRIXDOWN, "                "
                    "   Scroll Down  "
-                   "                ", "..\\fntcol\\pc.f14", 
+                   "                ", "fntcol\\pc.f14", 
                   2, 0, 1, SQUARE_PIXELS, 16, 3, 6, MBD_DOWN, false, 0,
                   RGB(0, 0, 0), RGB(255, 181, 63), RGB(103, 64, 23)
 } ;
 
 static led_data_t led_static1 = {
-   IDC_LCDSTATIC, " derelict ", "..\\fntcol\\roman2.f19",
+   IDC_LCDSTATIC, " derelict ", "fntcol\\roman2.f19",
    2, 0, 1, SQUARE_PIXELS, 0, 0, 0, MBD_STATIC, false, 0,
    RGB(0, 0, 192), RGB(0, 240, 240), RGB(0, 0, 192)
 } ;
