@@ -1,5 +1,5 @@
 //**********************************************************************
-//  Copyright (c) 2009-2014  Daniel D Miller
+//  Copyright (c) 2009-2025  Daniel D Miller
 //  wShowFont.exe - Viewer for raster font files
 //  
 //  Written by:   Daniel D. Miller
@@ -11,7 +11,6 @@
 
 static char const * const Version = "wShowFont, Version 1.00" ;
 
-// #include "targetver.h"
 #include <windows.h>
 #include <stdio.h>
 #include <math.h>
@@ -30,10 +29,6 @@ static char const * const Version = "wShowFont, Version 1.00" ;
 #ifdef  USE_WINMSGS
 #include "winmsgs.h"
 #endif
-
-//  tooltips.cpp
-// extern HWND create_tooltips(HWND hwnd, uint max_width, uint popup_msec, uint stayup_msec);
-// extern void add_program_tooltips(HWND hwnd, HWND hwndToolTip);
 
 //lint -esym(526, atoi)
 //lint -esym(628, atoi)
