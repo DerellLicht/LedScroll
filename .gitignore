@@ -3,14 +3,4 @@ _lint.tmp
 *.o
 *.exe
 *.zip
-**.sdf
-**.suo
-**/*.sdf
-**/*.suo
-Debug/
-*/Debug/
-*/*/Debug/
-*/*/*/Debug/
-*/Debug/*
-*/*/Debug/*
-*/*/*/Debug/*
+*.bak

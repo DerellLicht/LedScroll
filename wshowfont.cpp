@@ -4,8 +4,8 @@
 //  
 //  Written by:   Daniel D. Miller
 //**********************************************************************
-//  version		changes
-//	 =======		======================================
+//  version    changes
+//  =======    ======================================
 //    1.00     original, derived from wFontList
 //****************************************************************************
 
@@ -17,10 +17,12 @@ static char const * const Version = "wShowFont, Version 1.00" ;
 #include <math.h>
 #include <sys/stat.h>
 #include <time.h>
+#include <tchar.h>
 #include <commctrl.h>
 
 #include "resource.h"
 #include "common.h"
+#include "tooltips.h"
 #include "statbar.h"
 #include "fontmgr.h"
 #include "lrender.h"
@@ -29,8 +31,8 @@ static char const * const Version = "wShowFont, Version 1.00" ;
 #endif
 
 //  tooltips.cpp
-extern HWND create_tooltips(HWND hwnd, uint max_width, uint popup_msec, uint stayup_msec);
-extern void add_program_tooltips(HWND hwnd, HWND hwndToolTip);
+// extern HWND create_tooltips(HWND hwnd, uint max_width, uint popup_msec, uint stayup_msec);
+// extern void add_program_tooltips(HWND hwnd, HWND hwndToolTip);
 
 //lint -esym(526, atoi)
 //lint -esym(628, atoi)
@@ -75,6 +77,30 @@ static uint const MAX_CHAR_GAP = 6 ;
 static lrender_init_t test_init = {
    font_name, 3, 1, 2, SQUARE_PIXELS, RGB(31, 31, 31), RGB(63, 181, 255), RGB(23, 64, 103)
 } ;
+
+//****************************************************************************
+//  CommPort dialog tooltips
+//****************************************************************************
+static tooltip_data const program_tooltips[] = {
+{ IDS_FONTNAME,      _T("Filename of current font")},
+{ IDC_FONTNAME,      _T("Filename of current font")},
+{ IDB_LOAD_FONT,     _T("Load different font file" )},
+{ IDC_RB_ROUND,      _T("Change displayed font bits to filled circles" )},
+{ IDC_RB_SQUARE,     _T("Change displayed font bits to filled squares" )},
+{ IDS_PIXDIAM,       _T("Set diameter of displayed font bits" )},
+{ IDC_PIXDIAM,       _T("Set diameter of displayed font bits" )},
+{ IDS_BITGAP,        _T("Set gap between font bits (in pixels)" )},
+{ IDC_BITGAP,        _T("Set gap between font bits (in pixels)" )},
+{ IDS_CHARGAP,       _T("Set gap between characters (in pixels)" )},
+{ IDC_CHARGAP,       _T("Set gap between characters (in pixels)" )},
+{ IDB_ATTR_SET,      _T("Set color of SET (ON) font bits" )},
+{ IDC_SHOW_SET,      _T("Set color of SET (ON) font bits" )},
+{ IDB_ATTR_CLEAR,    _T("Set color of CLEARED (OFF) font bits" )},
+{ IDC_SHOW_CLEAR,    _T("Set color of CLEARED (OFF) font bits" )},
+{ IDB_ATTR_BGND,     _T("Set background color of display field" )},
+{ IDC_SHOW_BGND,     _T("Set background color of display field" )},
+{ IDOK,              _T("Close this program" )},
+{ 0, NULL }} ;
 
 //***********************************************************************
 static uint screen_width  = 0 ;
@@ -436,8 +462,9 @@ static bool do_init_dialog(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam
    hwndBgndAttr  = GetDlgItem(hwnd, IDC_SHOW_BGND) ;
    hwndShowFont  = GetDlgItem(hwnd, IDC_SHOW_FONT) ;
 
-   HWND hToolTip = create_tooltips(hwnd, 150, 100, 10000) ;
-   add_program_tooltips(hwnd, hToolTip) ;
+   // HWND hToolTip = create_tooltips(hwnd, 150, 100, 10000) ;
+   // add_program_tooltips(hwnd, hToolTip) ;
+   create_and_add_tooltips(hwnd, 150, 100, 10000, program_tooltips);
 
    //  do some of the init work later, because it does not work now
    main_timer_id = SetTimer(hwnd, IDT_TIMER_MAIN, 100, (TIMERPROC) NULL) ;
@@ -679,10 +706,10 @@ static bool do_destroy(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam, LP
 }
 
 //*******************************************************************
-// typedef struct winproc_table_s {
-//    uint win_code ;
-//    bool (*winproc_func)(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam, LPVOID private_data) ;
-// } winproc_table_t ;
+typedef struct winproc_table_s {
+   uint win_code ;
+   bool (*winproc_func)(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam, LPVOID private_data) ;
+} winproc_table_t ;
 
 static winproc_table_t const winproc_table[] = {
 { WM_INITDIALOG,     do_init_dialog },
