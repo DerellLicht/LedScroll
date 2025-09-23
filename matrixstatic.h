@@ -29,6 +29,9 @@
 
 //lint -esym(1540, CMatrixStatic::hwndParent, CMatrixStatic::hwndSelf, CMatrixStatic::hdcSelf)
 
+//lint -esym(768, CMatrixStatic::m_bImmediateUpdate, CMatrixStatic::m_btimer)
+//lint -esym(768, CMatrixStatic::m_iImagematrix, CMatrixStatic::m_iTimer)
+
 //lint -esym(14, DEFAULT_BGND, DEFAULT_SET, DEFAULT_CLEAR)
 //lint -esym(765, DEFAULT_BGND, DEFAULT_SET, DEFAULT_CLEAR)
 //  definitions from original MatrixStatic package
@@ -72,7 +75,7 @@ private:
    HDC      hdcSelf ;
 
    char     m_cPadChar;
-   string   m_csStrText;
+   string   m_csStrText;   //lint !e601
    bool     m_bModified, m_bImmediateUpdate, m_btimer, m_bAutoPad;   
    COLORREF m_crOffColor,  m_crOnColor, m_crBackColor;
    UINT     m_iImagematrix, m_iTimer;

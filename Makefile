@@ -3,11 +3,8 @@ USE_DEBUG = NO
 USE_STATIC = NO
 USE_WINMSGS = NO
 
-<<<<<<< HEAD
-=======
 #BASE_PATH=c:/mingw.tdm461/bin/
 #BASE_PATH=c:/mingw.v4.8.1/bin/
->>>>>>> 0b0b9773be1f4a7a25efe03d2e3635d0b67a9c32
 BASE_PATH=d:/tdm32/bin/
 
 ifeq ($(USE_DEBUG),YES)
@@ -20,20 +17,16 @@ endif
 CFLAGS += -Wno-write-strings
 CFLAGS += -Wno-stringop-truncation
 CFLAGS += -Weffc++
-<<<<<<< HEAD
-#LiFLAGS += -DWINVER=0x0500
-#LiFLAGS += -D_WIN32_IE=0x0501
-=======
-CFLAGS += -Wno-stringop-truncation
-LiFLAGS += -DWINVER=0x0500
-LiFLAGS += -D_WIN32_IE=0x0501
->>>>>>> 0b0b9773be1f4a7a25efe03d2e3635d0b67a9c32
-#LiFLAGS += _WIN32_WINNT=0x0501
+
+ifeq ($(USE_WINMSGS),YES)
 CFLAGS += -DUSE_WINMSGS
+endif
 
 LiFLAGS += -Ider_libs
 CFLAGS += -Ider_libs
 IFLAGS += -Ider_libs
+
+LINTFILES=lintdefs.cpp lintdefs.ref.h 
 
 CSRC+=led.scroll.cpp matrixstatic.cpp lrender.cpp fontmgr.cpp wshowfont.cpp \
 der_libs\tooltips.cpp \
@@ -70,7 +63,7 @@ source:
 	zip $(BIN).src.zip *
 
 lint:
-	cmd /C "c:\lint9\lint-nt +v -width(160,4) $(LiFLAGS) -ic:\lint9 mingw.lnt -os(_lint.tmp) lintdefs.cpp $(CSRC)"
+	cmd /C "c:\lint9\lint-nt +v -width(160,4) $(LiFLAGS) -ic:\lint9 mingw.lnt -os(_lint.tmp) $(LINTFILES) $(CSRC)"
 
 depend:
 	makedepend $(IFLAGS) $(CSRC)
@@ -89,8 +82,8 @@ led.scroll.o: lrender.h matrixstatic.h
 matrixstatic.o: der_libs/common.h fontmgr.h lrender.h MatrixStatic.h
 lrender.o: der_libs/common.h fontmgr.h lrender.h
 fontmgr.o: der_libs/common.h fontmgr.h
-wshowfont.o: targetver.h resource.h der_libs/common.h der_libs/tooltips.h
-wshowfont.o: der_libs/statbar.h fontmgr.h lrender.h
+wshowfont.o: resource.h der_libs/common.h der_libs/commonw.h
+wshowfont.o: der_libs/tooltips.h der_libs/statbar.h fontmgr.h lrender.h
 der_libs\tooltips.o: der_libs/iface_32_64.h der_libs/common.h
 der_libs\tooltips.o: der_libs/tooltips.h
 der_libs\common_funcs.o: der_libs/common.h

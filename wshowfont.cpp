@@ -11,7 +11,7 @@
 
 static char const * const Version = "wShowFont, Version 1.00" ;
 
-#include "targetver.h"
+// #include "targetver.h"
 #include <windows.h>
 #include <stdio.h>
 #include <math.h>
@@ -22,6 +22,7 @@ static char const * const Version = "wShowFont, Version 1.00" ;
 
 #include "resource.h"
 #include "common.h"
+#include "commonw.h"
 #include "tooltips.h"
 #include "statbar.h"
 #include "fontmgr.h"
@@ -101,32 +102,6 @@ static tooltip_data const program_tooltips[] = {
 { IDC_SHOW_BGND,     _T("Set background color of display field" )},
 { IDOK,              _T("Close this program" )},
 { 0, NULL }} ;
-
-//***********************************************************************
-static uint screen_width  = 0 ;
-static uint screen_height = 0 ;
-
-static void get_monitor_dimens(HWND hwnd)
-{
-   HMONITOR currentMonitor;      // Handle to monitor where fullscreen should go
-   MONITORINFO mi;               // Info of that monitor
-   currentMonitor = MonitorFromWindow(hwnd, MONITOR_DEFAULTTONEAREST);
-   mi.cbSize = sizeof(MONITORINFO);
-   if (GetMonitorInfo(currentMonitor, &mi) != FALSE) {
-      screen_width  = mi.rcMonitor.right  - mi.rcMonitor.left ;
-      screen_height = mi.rcMonitor.bottom - mi.rcMonitor.top ;
-   }
-}
-
-static uint get_screen_width(void)
-{
-   return screen_width ;
-}
-
-static uint get_screen_height(void)
-{
-   return screen_height ;
-}
 
 //***********************************************************************
 void show_statbar_msg(char *msg)
@@ -706,10 +681,10 @@ static bool do_destroy(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam, LP
 }
 
 //*******************************************************************
-typedef struct winproc_table_s {
-   uint win_code ;
-   bool (*winproc_func)(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam, LPVOID private_data) ;
-} winproc_table_t ;
+// typedef struct winproc_table_s {
+//    uint win_code ;
+//    bool (*winproc_func)(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam, LPVOID private_data) ;
+// } winproc_table_t ;
 
 static winproc_table_t const winproc_table[] = {
 { WM_INITDIALOG,     do_init_dialog },

@@ -34,8 +34,9 @@
 static char const * const Version = "LED Scrolling, Version 1.04" ;
 
 #include <windows.h>
-// #include <tchar.h>
 #include <string>
+//lint -e537 Repeated include file 'd:\tdm32\include\time.h'
+//lint -e451 Header file 'd:\tdm32\include\time.h' repeatedly included but does not have a standard include guard
 #include <time.h>
 using namespace std;
 

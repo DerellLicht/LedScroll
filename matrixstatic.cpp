@@ -32,6 +32,8 @@
 #include <string>
 using namespace std;
 
+//lint -e1565  member not assigned by initializer
+
 #include "common.h"
 #include "fontmgr.h"
 #include "lrender.h"
@@ -117,9 +119,9 @@ void CMatrixStatic::SetText(char *lpszText)
 {
    if (m_csStrText != lpszText) {
       m_csStrText = lpszText;
-		m_bModified = true;
+      m_bModified = true;
       field_is_drawn = false ;
-	}
+   }
 }
 
 //***************************************************************
@@ -134,10 +136,10 @@ int CMatrixStatic::GetText(char *string, int size) const
 {
    int length = m_csStrText.length();
    if (m_csStrText.empty() || size < length)
-		return 0;
+      return 0;
    // _tcscpy((LPTSTR)string, m_csStrText.c_str());
    strcpy((char *) string, m_csStrText.c_str());
-	return length;
+   return length;
 }
 
 //********************************************************************
@@ -216,11 +218,11 @@ void CMatrixStatic::OnTimer(void)
          if (slen < m_iMaxXChars) {
             int diff =  m_iMaxXChars - slen;
             // syslog("pt A: padding with %c\n", m_cPadChar) ;
-				for (;diff > 0; diff--)
-					m_csStrText += m_cPadChar;
+            for (;diff > 0; diff--)
+               m_csStrText += m_cPadChar;
             slen = m_iMaxXChars ;
-			}
-		}
+         }
+      }
       switch (m_iDirection) {
       case MBD_LEFT:
          // m_csStrText = m_csStrText.Mid(1) + m_csStrText[0]; //Move the first character to the end.
@@ -237,39 +239,39 @@ void CMatrixStatic::OnTimer(void)
          m_csStrText = m_csStrText.substr(slen-1, 1) + m_csStrText.substr(0,slen-1) ;
          break;
       }  //lint !e788  enum constant not used within defaulted switch
-	}
+   }
    //  Handle multi-row fields
    else if (m_iMaxYChars > 1) {
       if (m_bAutoPad) {
          if (slen < (m_iMaxXChars * m_iMaxYChars)) {
             int diff = m_iMaxXChars * m_iMaxYChars - slen;
             // syslog("pt B: padding with %c\n", m_cPadChar) ;
-				for (;diff > 0; diff--)
-					m_csStrText += m_cPadChar;
+            for (;diff > 0; diff--)
+               m_csStrText += m_cPadChar;
             slen = m_iMaxXChars ;
-			}
-		}
+         }
+      }
       if (m_iDirection  == MBD_DOWN)
-		{
+      {
          //  move row from end to beginning
          // string tmp  = m_csStrText.Right(m_iMaxXChars);
          // m_csStrText = tmp + m_csStrText.Left(slen - m_iMaxXChars);
          m_csStrText = m_csStrText.substr(slen-m_iMaxXChars, m_iMaxXChars) + m_csStrText.substr(0,slen-m_iMaxXChars) ;
-		}
+      }
       else if (m_iDirection == MBD_UP)
-		{
+      {
          //  move row from beginning to end
          // string tmp  = m_csStrText.Left(m_iMaxXChars);
          // m_csStrText = m_csStrText.Mid(m_iMaxXChars) + tmp;
          m_csStrText = m_csStrText.substr(m_iMaxXChars, slen-m_iMaxXChars) + m_csStrText.substr(0, m_iMaxXChars) ;
-		}
+      }
       else if (m_iDirection  == MBD_LEFT)
-		{
+      {
          //  this is doing a right-or-left rotate of characters 
          //  on each row of a multi-row display.
          uint loop = slen / m_iMaxXChars;
          if (loop == 0 || slen < m_iMaxXChars)
-				loop = 1;
+            loop = 1;
          row_len = m_iMaxXChars ;
          row_idx = 0 ;
          for (idx=0; idx<loop; idx++) {
@@ -280,12 +282,12 @@ void CMatrixStatic::OnTimer(void)
          m_csStrText = stemp ;
       }
       else if (m_iDirection  == MBD_RIGHT)
-		{
+      {
          //  this is doing a right-or-left rotate of characters 
          //  on each row of a multi-row display.
          uint loop = slen / m_iMaxXChars;  //  get number of rows
          if (loop == 0 || slen < m_iMaxXChars)
-				return;
+            return;
          row_len = m_iMaxXChars ;
          row_idx = 0 ;
          for (idx=0; idx<loop; idx++) {
@@ -295,7 +297,7 @@ void CMatrixStatic::OnTimer(void)
          }
          m_csStrText = stemp ;
       }
-	}
+   }
    OnPaint() ;
 }  //lint !e715
 
