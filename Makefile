@@ -3,6 +3,11 @@ USE_DEBUG = NO
 USE_STATIC = NO
 USE_WINMSGS = NO
 
+<<<<<<< HEAD
+=======
+#BASE_PATH=c:/mingw.tdm461/bin/
+#BASE_PATH=c:/mingw.v4.8.1/bin/
+>>>>>>> 0b0b9773be1f4a7a25efe03d2e3635d0b67a9c32
 BASE_PATH=d:/tdm32/bin/
 
 ifeq ($(USE_DEBUG),YES)
@@ -15,8 +20,14 @@ endif
 CFLAGS += -Wno-write-strings
 CFLAGS += -Wno-stringop-truncation
 CFLAGS += -Weffc++
+<<<<<<< HEAD
 #LiFLAGS += -DWINVER=0x0500
 #LiFLAGS += -D_WIN32_IE=0x0501
+=======
+CFLAGS += -Wno-stringop-truncation
+LiFLAGS += -DWINVER=0x0500
+LiFLAGS += -D_WIN32_IE=0x0501
+>>>>>>> 0b0b9773be1f4a7a25efe03d2e3635d0b67a9c32
 #LiFLAGS += _WIN32_WINNT=0x0501
 CFLAGS += -DUSE_WINMSGS
 
