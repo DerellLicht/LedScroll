@@ -29,9 +29,6 @@
 
 //lint -esym(1540, CMatrixStatic::hwndParent, CMatrixStatic::hwndSelf, CMatrixStatic::hdcSelf)
 
-//lint -esym(768, CMatrixStatic::m_bImmediateUpdate, CMatrixStatic::m_btimer)
-//lint -esym(768, CMatrixStatic::m_iImagematrix, CMatrixStatic::m_iTimer)
-
 //lint -esym(14, DEFAULT_BGND, DEFAULT_SET, DEFAULT_CLEAR)
 //lint -esym(765, DEFAULT_BGND, DEFAULT_SET, DEFAULT_CLEAR)
 //  definitions from original MatrixStatic package
@@ -76,9 +73,10 @@ private:
 
    char     m_cPadChar;
    string   m_csStrText;   //lint !e601
-   bool     m_bModified, m_bImmediateUpdate, m_btimer, m_bAutoPad;   
+   // bool     m_bModified, m_bImmediateUpdate, m_btimer, m_bAutoPad;   
+   bool     m_bModified, m_bAutoPad;   
    COLORREF m_crOffColor,  m_crOnColor, m_crBackColor;
-   UINT     m_iImagematrix, m_iTimer;
+   // UINT     m_iImagematrix, m_iTimer;
    int      m_icharwidth, m_icharheight, m_ixspacing, m_iyspacing;
    int      m_iMaxYChars, m_iMaxXChars;
 
@@ -95,14 +93,18 @@ private:
    // bool GetCharBmpOffset(RECT *rc, char ch) const;
    void OnPaint(void);
    
-   //  disable copy and assignment operators
-   CMatrixStatic operator=(const CMatrixStatic src) ;
-   CMatrixStatic(const CMatrixStatic&);
-
 public:
    CMatrixStatic(HWND hwnd, led_data_p led_data);
    // virtual ~CMatrixStatic();
    ~CMatrixStatic();
+
+   //  disable copy constructor and assignment operators
+   CMatrixStatic(const CMatrixStatic&) = delete;
+   CMatrixStatic operator=(const CMatrixStatic &src) = delete;
+
+   //  disable move constructor and assignment operators
+   CMatrixStatic(const CMatrixStatic&&) = delete;
+   CMatrixStatic operator=(const CMatrixStatic &&src) = delete;
 
    // Implementation
 //lint -esym(114, CMatrixStatic)  Inconsistent structure declaration for tag 'CMatrixStatic' ??

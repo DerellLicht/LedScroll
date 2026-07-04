@@ -37,7 +37,7 @@ using namespace std;
 #include "common.h"
 #include "fontmgr.h"
 #include "lrender.h"
-#include "MatrixStatic.h"
+#include "matrixstatic.h"
 
 //lint -esym(1714, CMatrixStatic::GetText)
 
@@ -51,14 +51,14 @@ CMatrixStatic::CMatrixStatic(HWND hwnd, led_data_p led_data) :
    m_cPadChar(' '),
    m_csStrText(),
    m_bModified(false), 
-   m_bImmediateUpdate(false), 
-   m_btimer(false),
+   // m_bImmediateUpdate(false), 
+   // m_btimer(false),
    m_bAutoPad(false),
    m_crOffColor(RGB(23, 64,  103)),  
    m_crOnColor(RGB(63, 181, 255)), 
    m_crBackColor(RGB(0,  0,   0)),
-   m_iImagematrix(0), 
-   m_iTimer(0),
+   // m_iImagematrix(0), 
+   // m_iTimer(0),
    m_icharwidth(0), 
    m_icharheight(0), 
    m_ixspacing(0), 
@@ -194,7 +194,7 @@ void CMatrixStatic::OnPaint(void)
 //************************************************************************************
 void CMatrixStatic::OnTimer(void) 
 { 
-   uint row_len = m_iMaxXChars ;
+   uint row_len ;
    uint idx ;
    uint row_idx = 0 ;
    string stemp ;

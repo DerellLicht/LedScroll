@@ -80,15 +80,20 @@ private:
 //lint -esym(1720, lrender)  assignment operator for class 'lrender' has non-const parameter
 //lint -esym(1722, lrender)  assignment operator for class 'lrender' does not return a reference to class
 //lint -esym(1704, lrender::lrender)  Constructor has private access specification
-   //  disable copy and assignment operators
-   lrender operator=(const lrender src) ;
-   lrender(const lrender&);
-
 public:
    //lint -esym(1712, lrender)
    lrender(HWND hwnd, char *fname) ;
    lrender(HWND hwnd, lrender_init_p init_data) ;
-   ~lrender();
+   ~lrender() override;
+   
+   //  disable copy constructor and assignment operators
+   lrender(const lrender&) = delete;
+   lrender operator=(const lrender &src) = delete;
+
+   //  disable move constructor and assignment operators
+   lrender(const lrender&&) = delete;
+   lrender operator=(const lrender &&src) = delete;
+
    void set_clipping_region(void); 
    void set_object_origin(unsigned x, unsigned y) ;
    void set_attr(unsigned fg, unsigned bg, unsigned bgnd);

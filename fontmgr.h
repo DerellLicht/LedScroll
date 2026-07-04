@@ -12,12 +12,22 @@ class fontmgr {
 private:
    u8 user_font[256][20];
    unsigned user_points ;
-   unsigned fwidth ;   //  always 8 for normal font, but 5 for fixed font!
+   // unsigned fwidth ;   //  always 8 for normal font, but 5 for fixed font!
 
 public:
    //lint -esym(1712, fontmgr)
    fontmgr(char *fname) ;
-   virtual ~fontmgr() {} ;
+   virtual ~fontmgr() = default ;
+   
+   //  disable copy constructor and assignment operators
+   fontmgr(const fontmgr&) = delete;
+   fontmgr operator=(const fontmgr &src) = delete;
+
+   //  disable move constructor and assignment operators
+   fontmgr(const fontmgr&&) = delete;
+   fontmgr operator=(const fontmgr &&src) = delete;
+
+   
    int read_font_file(char *fname);
    u8 *get_char_font_map(char chr);
    unsigned get_font_points(void) const 

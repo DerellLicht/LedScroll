@@ -8,11 +8,11 @@ USE_WINMSGS = NO
 BASE_PATH=d:/tdm32/bin/
 
 ifeq ($(USE_DEBUG),YES)
-CFLAGS=-Wall -O -ggdb -mwindows 
-LFLAGS=
+CFLAGS=-Wall -O -ggdb
+LFLAGS=-mwindows 
 else
-CFLAGS=-Wall -O2 -mwindows 
-LFLAGS=-s
+CFLAGS=-Wall -O2 
+LFLAGS=-s -mwindows 
 endif
 CFLAGS += -Wno-write-strings
 CFLAGS += -Wno-stringop-truncation
@@ -82,7 +82,7 @@ rc.o: $(BIN).rc
 
 led.scroll.o: resource.h der_libs/common.h der_libs/statbar.h fontmgr.h
 led.scroll.o: lrender.h matrixstatic.h
-matrixstatic.o: der_libs/common.h fontmgr.h lrender.h MatrixStatic.h
+matrixstatic.o: der_libs/common.h fontmgr.h lrender.h matrixstatic.h
 lrender.o: der_libs/common.h fontmgr.h lrender.h
 fontmgr.o: der_libs/common.h fontmgr.h
 wshowfont.o: resource.h der_libs/common.h der_libs/commonw.h

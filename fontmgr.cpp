@@ -21,8 +21,9 @@ using namespace std;
 
 //******************************************************************
 fontmgr::fontmgr(char *fname) :
-   user_points(0),
-   fwidth(5)
+   user_font{}
+   ,user_points(0)
+   // ,fwidth(5)
 {
    read_font_file(fname) ;
 }

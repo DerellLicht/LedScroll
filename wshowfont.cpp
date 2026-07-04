@@ -332,7 +332,7 @@ static uint read_count(HWND hwnd)
    GetWindowTextA (hwnd, tempbfr, 10);
    tempbfr[10] = 0 ;
    char *tptr = strip_leading_spaces(tempbfr) ;
-   return (uint) atoi(tptr) ;
+   return (uint) atoi(tptr) ; //  NOLINT
 }
 
 //*******************************************************************

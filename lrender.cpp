@@ -66,9 +66,10 @@ lrender::lrender(HWND hwnd, char *fname) :
    bit_gap(2),
    char_gap(2),
    narrow_space(1),
-   pixel_type(1)
+   pixel_type(1),
+   frames{}
 {
-   ZeroMemory(frames, sizeof(frames)) ;
+   // ZeroMemory(frames, sizeof(frames)) ;
 }
 
 //**************************************************************************
@@ -85,9 +86,10 @@ lrender::lrender(HWND hwnd, lrender_init_p init_data) :
    bit_gap(2),
    char_gap(2),
    narrow_space(1),
-   pixel_type(1)
+   pixel_type(1),
+   frames{}
 {
-   ZeroMemory(frames, sizeof(frames)) ;
+   // ZeroMemory(frames, sizeof(frames)) ;
    // test_led = new lrender(hwnd, font_name) ;
    // set_dimens(3, 1, 2) ;  //  diameter, bit gap, inter-char gap
    set_dimens(init_data->diameter, init_data->bit_gap, init_data->char_gap) ;
