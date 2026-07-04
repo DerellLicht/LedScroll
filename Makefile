@@ -29,11 +29,11 @@ IFLAGS += -Ider_libs
 LINTFILES=lintdefs.cpp lintdefs.ref.h 
 
 CSRC+=led.scroll.cpp matrixstatic.cpp lrender.cpp fontmgr.cpp wshowfont.cpp \
-der_libs\tooltips.cpp \
-der_libs\common_funcs.cpp \
-der_libs\common_win.cpp \
-der_libs\statbar.cpp \
-der_libs\winmsgs.cpp 
+der_libs/tooltips.cpp \
+der_libs/common_funcs.cpp \
+der_libs/common_win.cpp \
+der_libs/statbar.cpp \
+der_libs/winmsgs.cpp 
 
 ifeq ($(USE_STATIC),YES)
 LIBS=-lgdi32 -lcomctl32 -static
@@ -62,6 +62,9 @@ source:
 	rm -f $(BIN).src.zip
 	zip $(BIN).src.zip *
 
+check:
+	cmd /C "d:\llvm\bin\clang-tidy.exe $(CSRC)"
+
 lint:
 	cmd /C "c:\lint9\lint-nt +v -width(160,4) $(LiFLAGS) -ic:\lint9 mingw.lnt -os(_lint.tmp) $(LINTFILES) $(CSRC)"
 
@@ -84,8 +87,8 @@ lrender.o: der_libs/common.h fontmgr.h lrender.h
 fontmgr.o: der_libs/common.h fontmgr.h
 wshowfont.o: resource.h der_libs/common.h der_libs/commonw.h
 wshowfont.o: der_libs/tooltips.h der_libs/statbar.h fontmgr.h lrender.h
-der_libs\tooltips.o: der_libs/iface_32_64.h der_libs/common.h
-der_libs\tooltips.o: der_libs/tooltips.h
-der_libs\common_funcs.o: der_libs/common.h
-der_libs\common_win.o: der_libs/common.h der_libs/commonw.h
-der_libs\statbar.o: der_libs/common.h der_libs/commonw.h der_libs/statbar.h
+der_libs/tooltips.o: der_libs/iface_32_64.h der_libs/common.h
+der_libs/tooltips.o: der_libs/tooltips.h
+der_libs/common_funcs.o: der_libs/common.h
+der_libs/common_win.o: der_libs/common.h der_libs/commonw.h
+der_libs/statbar.o: der_libs/common.h der_libs/commonw.h der_libs/statbar.h

@@ -1,0 +1,182 @@
+[
+ {
+  "directory": "D:\\SourceCode\\Git\\LedScroll",
+  "arguments": [
+   "D:/llvm/bin/i686-w64-mingw32-clang++.exe",
+   "-Wall",
+   "-O2",
+   "-mwindows",
+   "-Wno-write-strings",
+   "-Wno-stringop-truncation",
+   "-Weffc++",
+   "-Ider_libs",
+   "-c",
+   "led.scroll.cpp",
+   "-o",
+   "led.scroll.o"
+  ],
+  "file": "led.scroll.cpp"
+ },
+ {
+  "directory": "D:\\SourceCode\\Git\\LedScroll",
+  "arguments": [
+   "D:/llvm/bin/i686-w64-mingw32-clang++.exe",
+   "-Wall",
+   "-O2",
+   "-mwindows",
+   "-Wno-write-strings",
+   "-Wno-stringop-truncation",
+   "-Weffc++",
+   "-Ider_libs",
+   "-c",
+   "matrixstatic.cpp",
+   "-o",
+   "matrixstatic.o"
+  ],
+  "file": "matrixstatic.cpp"
+ },
+ {
+  "directory": "D:\\SourceCode\\Git\\LedScroll",
+  "arguments": [
+   "D:/llvm/bin/i686-w64-mingw32-clang++.exe",
+   "-Wall",
+   "-O2",
+   "-mwindows",
+   "-Wno-write-strings",
+   "-Wno-stringop-truncation",
+   "-Weffc++",
+   "-Ider_libs",
+   "-c",
+   "lrender.cpp",
+   "-o",
+   "lrender.o"
+  ],
+  "file": "lrender.cpp"
+ },
+ {
+  "directory": "D:\\SourceCode\\Git\\LedScroll",
+  "arguments": [
+   "D:/llvm/bin/i686-w64-mingw32-clang++.exe",
+   "-Wall",
+   "-O2",
+   "-mwindows",
+   "-Wno-write-strings",
+   "-Wno-stringop-truncation",
+   "-Weffc++",
+   "-Ider_libs",
+   "-c",
+   "fontmgr.cpp",
+   "-o",
+   "fontmgr.o"
+  ],
+  "file": "fontmgr.cpp"
+ },
+ {
+  "directory": "D:\\SourceCode\\Git\\LedScroll",
+  "arguments": [
+   "D:/llvm/bin/i686-w64-mingw32-clang++.exe",
+   "-Wall",
+   "-O2",
+   "-mwindows",
+   "-Wno-write-strings",
+   "-Wno-stringop-truncation",
+   "-Weffc++",
+   "-Ider_libs",
+   "-c",
+   "wshowfont.cpp",
+   "-o",
+   "wshowfont.o"
+  ],
+  "file": "wshowfont.cpp"
+ },
+ {
+  "directory": "D:\\SourceCode\\Git\\LedScroll",
+  "arguments": [
+   "D:/llvm/bin/i686-w64-mingw32-clang++.exe",
+   "-Wall",
+   "-O2",
+   "-mwindows",
+   "-Wno-write-strings",
+   "-Wno-stringop-truncation",
+   "-Weffc++",
+   "-Ider_libs",
+   "-c",
+   "der_libs/tooltips.cpp",
+   "-o",
+   "der_libs/tooltips.o"
+  ],
+  "file": "der_libs/tooltips.cpp"
+ },
+ {
+  "directory": "D:\\SourceCode\\Git\\LedScroll",
+  "arguments": [
+   "D:/llvm/bin/i686-w64-mingw32-clang++.exe",
+   "-Wall",
+   "-O2",
+   "-mwindows",
+   "-Wno-write-strings",
+   "-Wno-stringop-truncation",
+   "-Weffc++",
+   "-Ider_libs",
+   "-c",
+   "der_libs/common_funcs.cpp",
+   "-o",
+   "der_libs/common_funcs.o"
+  ],
+  "file": "der_libs/common_funcs.cpp"
+ },
+ {
+  "directory": "D:\\SourceCode\\Git\\LedScroll",
+  "arguments": [
+   "D:/llvm/bin/i686-w64-mingw32-clang++.exe",
+   "-Wall",
+   "-O2",
+   "-mwindows",
+   "-Wno-write-strings",
+   "-Wno-stringop-truncation",
+   "-Weffc++",
+   "-Ider_libs",
+   "-c",
+   "der_libs/common_win.cpp",
+   "-o",
+   "der_libs/common_win.o"
+  ],
+  "file": "der_libs/common_win.cpp"
+ },
+ {
+  "directory": "D:\\SourceCode\\Git\\LedScroll",
+  "arguments": [
+   "D:/llvm/bin/i686-w64-mingw32-clang++.exe",
+   "-Wall",
+   "-O2",
+   "-mwindows",
+   "-Wno-write-strings",
+   "-Wno-stringop-truncation",
+   "-Weffc++",
+   "-Ider_libs",
+   "-c",
+   "der_libs/statbar.cpp",
+   "-o",
+   "der_libs/statbar.o"
+  ],
+  "file": "der_libs/statbar.cpp"
+ },
+ {
+  "directory": "D:\\SourceCode\\Git\\LedScroll",
+  "arguments": [
+   "D:/llvm/bin/i686-w64-mingw32-clang++.exe",
+   "-Wall",
+   "-O2",
+   "-mwindows",
+   "-Wno-write-strings",
+   "-Wno-stringop-truncation",
+   "-Weffc++",
+   "-Ider_libs",
+   "-c",
+   "der_libs/winmsgs.cpp",
+   "-o",
+   "der_libs/winmsgs.o"
+  ],
+  "file": "der_libs/winmsgs.cpp"
+ }
+]
