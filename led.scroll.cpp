@@ -1,11 +1,11 @@
 //****************************************************************************
-//  Copyright (c) 2014  Daniel D Miller
+//  Copyright (c) 2014-2026  Derell Licht
 //  lcd.scroll.exe - create tile-based scrolling-text application.
 //  This project differs from Nic Wilson's LCD Tiles project
 //  in that it uses bit-mapped raster fonts instead of 
 //  static bitmap files.
 //
-//  Written by:  Dan Miller
+//  Written by:  Derell Licht
 //****************************************************************************
 //  This is free software.  It is distributed under the terms of the
 //  Code Project Open License (CPOL) V1.02 :
@@ -21,24 +21,13 @@
 //  > The Article accompanying the Work may not be distributed or republished 
 //    without the Author's consent
 //****************************************************************************
-//  Revision history
-//  1.00    01/31/14    Initial release
-//  1.01    02/03/14    Modified MatrixStatic constructor to take a
-//                      data structor which specfies all required params.
-//                      This hides the sequence of ini operations from user.
-//  1.02    02/04/14    Code cleanup, remove unused code
-//  1.03    02/05/14    Sync lrender class with another utility
-//  1.04    02/07/14    Build wShowFont utility into this program
-//****************************************************************************
 
 static char const * const Version = "LED Scrolling, Version 1.04" ;
 
 #include <windows.h>
 #include <string>
-//lint -e537 Repeated include file 'd:\tdm32\include\time.h'
-//lint -e451 Header file 'd:\tdm32\include\time.h' repeatedly included but does not have a standard include guard
 #include <time.h>
-using namespace std;
+// using namespace std;
 
 #include "resource.h"
 #include "common.h"
@@ -92,7 +81,7 @@ static led_data_t led_scrl_up = {
    IDC_MATRIXUP, "    LCDMATRIX   "
                  "                "
                  " by  Nic Wilson "
-                 " and Dan Miller "
+                 " and Derell Licht "
                  "----------------"
                  "                ", "fntcol\\script1.f14", 
                   1, 0, 0, SQUARE_PIXELS, 16, 3, 6, MBD_UP, false, 0,

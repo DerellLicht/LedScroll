@@ -1,5 +1,5 @@
 //**************************************************************************
-//  Copyright (c)  2014  Daniel D Miller
+//  Copyright (c)  2014  Derell Licht
 //  home.comcast.net/~derelict
 //  This program is freeware and can be used for any purpose,
 //  commercial or otherwise, without contacting the author.

@@ -1,10 +1,10 @@
 //***************************************************************************
-//  Copyright (c) 2014  Daniel D Miller
+//  Copyright (c) 2014-2026  Derell Licht
 //  1. Converted class to standard C++ and WinAPI, vs MFC implementation.
 //  2. Eliminated use of static bitmap image files, replaced with raster fonts
 //  License remains the same as specified by Nic Wilson (see below)
 //  
-//  01/29/14 Notes (Dan Miller)
+//  01/29/14 Notes
 //  This package has been modified to eliminate reference to Nic Wilson's
 //  static bitmap files.  Instead, it generates in-memory font-character
 //  images from old DOS bit-mapped files (see fntcol directory).
@@ -18,19 +18,8 @@
 // See readme.txt file for copyright notes
 //***************************************************************************
 
-//lint -esym(1712, CMatrixStatic)
-//lint -esym(1719, CMatrixStatic)
-//lint -esym(1720, CMatrixStatic)
-//lint -esym(1722, CMatrixStatic)
+#include <string>
 
-//lint -esym(769, LARGE, STATIC)
-
-//lint -esym(578, string, max)
-
-//lint -esym(1540, CMatrixStatic::hwndParent, CMatrixStatic::hwndSelf, CMatrixStatic::hdcSelf)
-
-//lint -esym(14, DEFAULT_BGND, DEFAULT_SET, DEFAULT_CLEAR)
-//lint -esym(765, DEFAULT_BGND, DEFAULT_SET, DEFAULT_CLEAR)
 //  definitions from original MatrixStatic package
 //    RGB(63, 181, 255),   // BLUE ON
 //    RGB(23, 64,  103),   // BLUE OFF

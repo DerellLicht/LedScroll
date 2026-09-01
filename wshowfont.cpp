@@ -1,8 +1,8 @@
 //**********************************************************************
-//  Copyright (c) 2009-2025  Daniel D Miller
+//  Copyright (c) 2009-2025  Derell Licht
 //  wShowFont.exe - Viewer for raster font files
 //  
-//  Written by:   Daniel D. Miller
+//  Written by:   Derell Licht
 //**********************************************************************
 //  version    changes
 //  =======    ======================================

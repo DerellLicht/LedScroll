@@ -1,9 +1,9 @@
 //***************************************************************************
-//  Copyright (c) 2014  Daniel D Miller
+//  Copyright (c) 2014  Derell Licht
 //  Converted class to standard C++ and WinAPI, vs MFC implementation.
 //  License remains the same as specified by Nic Wilson (see below)
 //  
-//  01/29/14 Notes (Dan Miller)
+//  01/29/14 Notes (Derell Licht)
 //  This package has been modified to eliminate reference to Nic Wilson's
 //  static bitmap files.  Instead, it generates in-memory font-character
 //  images from old DOS bit-mapped files (see fntcol directory).
