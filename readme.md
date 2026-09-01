@@ -1,13 +1,8 @@
-Digital Display LCD-Matrix control, Written in C++/WinAPI
-Copyright (c) 2014  Daniel D Miller
-web page: home.comcast.net/~derelict
+Digital Display LCD-Matrix control
+Copyright (c) 2014-2026  Derell Licht
 
 This project incorporates parts of of Nic Wilson's C++/MFC control, available at:
 http://www.codeproject.com/Articles/3174/Digital-Display-CStatic-control
-
-This is free software.  It is distributed under the terms of the
-Code Project Open License (CPOL) V1.02 :
-http://www.codeproject.com/info/cpol10.aspx
 
 The matrixstatic class (matrixstatic.cpp, matrixstatic.h) are:
 //****************************************************************************
@@ -18,19 +13,26 @@ The matrixstatic class (matrixstatic.cpp, matrixstatic.h) are:
 // Version: 1.0 November 2002
 //****************************************************************************
 
-###############################################################
+---
 Building the project
 
-> With MinGW (I used V4.4.1)
-In the main project directory, type "make"
+This application is built using the MinGW toolchain; 
+I recommend the [TDM](http://tdm-gcc.tdragon.net/) distribution, 
+to avoid certain issues with library accessibility. 
+The makefile also requires certain Cygwin tools (rm, make, etc).
+---
 
-> With Visual Studio 2010
-Open LedScroll\LedScroll.sln and build
+This project is licensed under _Creative Commons CC0 1.0 Universal_   
 
-###############################################################
+See the [License](LICENSE.txt) file for detailed information about this license
+---
+
+See [Changelog](CHANGELOG.md) for the full revision history.  
+  
+---
 Accessing font files from the demo program.
 
-The program expects to find these files in ..\fntcol relative
+The program expects to find these files in `..\fntcol` relative
 to the location of the executable file.
 
 The font files can be obtained from my github:

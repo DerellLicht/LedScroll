@@ -1,6 +1,6 @@
 USE_DEBUG = NO
 USE_64BIT = NO
-USE_UNICODE = YES
+USE_UNICODE = NO
 USE_CLANG = NO
 # sadly, cygwin mingw does not support gdiplus...
 USE_CYGWIN = NO
@@ -12,7 +12,7 @@ ifeq ($(USE_DEBUG),YES)
 CFLAGS=-Wall -O -ggdb
 LFLAGS=-mwindows 
 else
-CFLAGS=-Wall -O2 
+CFLAGS=-Wall -O2 -c
 LFLAGS=-s -mwindows 
 endif
 CFLAGS += -Wno-write-strings
@@ -62,7 +62,7 @@ clean:
 
 dist:
 	rm -f *.zip
-	zip -r $(DIST_ZIP) $(BINX) *.f* fntcol\* readme.txt
+	zip -r $(DIST_ZIP) $(BINX) *.f* fntcol\* readme.txt LICENSE.txt CHANGELOG.md
 
 # Your new automated release workflow
 release: dist
@@ -80,7 +80,7 @@ update: dist
 	@cmd /C "@echo Release v$(VERSION) assets successfully updated on GitHub!"
 
 clint:
-	cmd /C "python ..\ClaudeLint.py --exclude der_libs"
+	cmd /C "python ..\ClaudeLint.py --exclude der_libs --strip-arg=-Wno-stringop-truncation"
 	
 check:
 	cmd /C "d:\llvm\bin\clang-tidy.exe $(CSRC)"
@@ -95,7 +95,7 @@ depend:
 $(BINX): $(OBJS)
 	$(TOOLS)/$(GNAME) $(OBJS) $(LFLAGS) -o $(BINX) $(LIBS) 
 
-rc.o: $(BIN).rc 
+rc.o: led.scroll.rc 
 	$(TOOLS)\$(WRNAME) $< -O COFF -o $@
 
 # DO NOT DELETE

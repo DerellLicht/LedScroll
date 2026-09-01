@@ -61,7 +61,7 @@ private:
    HDC      hdcSelf ;
 
    char     m_cPadChar;
-   string   m_csStrText;   //lint !e601
+   std::string   m_csStrText;   //lint !e601
    // bool     m_bModified, m_bImmediateUpdate, m_btimer, m_bAutoPad;   
    bool     m_bModified, m_bAutoPad;   
    COLORREF m_crOffColor,  m_crOnColor, m_crBackColor;
