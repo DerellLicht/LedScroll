@@ -21,7 +21,7 @@ The matrixstatic class (matrixstatic.cpp, matrixstatic.h) are:
 Building the project
 
 This application is built using the MinGW toolchain;  
-I recommend the [TDM](http://tdm-gcc.tdragon.net/) distribution,  
+I recommend the [TDM](http://tdm-gcc.tdragon.net/) distribution, 
 to avoid certain issues with library accessibility.  
 The makefile also requires certain Cygwin tools (rm, make, etc). 
 ***
