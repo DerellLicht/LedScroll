@@ -8,14 +8,14 @@ This project incorporates parts of of Nic Wilson's C++/MFC control, available at
 http://www.codeproject.com/Articles/3174/Digital-Display-CStatic-control
 
 The `matrixstatic` class (`matrixstatic.cpp`, `matrixstatic.h`) are:  
-//****************************************************************************  
+<code>//****************************************************************************  
 // Copyright (C) 2002 by Nic Wilson  http://www.nicsoft.com.au (dead website)  
 // Written by Nic Wilson nicw@bigpond.net.au  
 //  
 // Release Date and Version:  
 // Version: 1.0 November 2002  
 //****************************************************************************  
-
+</code>
 ***
 ![Main Screen](LedScroll.jpg)
 
