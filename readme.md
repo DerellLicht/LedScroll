@@ -1,19 +1,20 @@
 Digital Display LCD-Matrix control
 Copyright (c) 2014-2026  Derell Licht
 
-This project incorporates parts of of Nic Wilson's C++/MFC control, available at:
+This project incorporates parts of of Nic Wilson's C++/MFC control, available at:  
 http://www.codeproject.com/Articles/3174/Digital-Display-CStatic-control
 
-The matrixstatic class (matrixstatic.cpp, matrixstatic.h) are:
-//****************************************************************************
-// Copyright (C) 2002 by Nic Wilson  http://www.nicsoft.com.au
-// Written by Nic Wilson nicw@bigpond.net.au (dead website)
-//
-// Release Date and Version:
-// Version: 1.0 November 2002
-//****************************************************************************
+The matrixstatic class (matrixstatic.cpp, matrixstatic.h) are:  
+//****************************************************************************  
+// Copyright (C) 2002 by Nic Wilson  http://www.nicsoft.com.au  
+// Written by Nic Wilson nicw@bigpond.net.au (dead website)  
+//  
+// Release Date and Version:  
+// Version: 1.0 November 2002  
+//****************************************************************************  
 
 ---
+
 Building the project
 
 This application is built using the MinGW toolchain; 
