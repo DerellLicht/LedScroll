@@ -17,7 +17,7 @@ The matrixstatic class (matrixstatic.cpp, matrixstatic.h) are:
 //****************************************************************************  
 
 ***
-See [Main Screen](LedScroll.jpg).  
+![Main Screen](LedScroll.jpg)
 
 ***
 
