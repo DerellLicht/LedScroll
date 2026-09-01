@@ -1,4 +1,4 @@
-Digital Display LCD-Matrix control
+Digital Display LCD-Matrix control  
 Copyright (c) 2014-2026  Derell Licht
 
 This project reads MSDOS-era bitmapped fonts, and creates scrolling-text
@@ -7,7 +7,7 @@ windows in various formats, with many display options.
 This project incorporates parts of of Nic Wilson's C++/MFC control, available at:  
 http://www.codeproject.com/Articles/3174/Digital-Display-CStatic-control
 
-The matrixstatic class (matrixstatic.cpp, matrixstatic.h) are:  
+The `matrixstatic` class (`matrixstatic.cpp`, `matrixstatic.h`) are:  
 //****************************************************************************  
 // Copyright (C) 2002 by Nic Wilson  http://www.nicsoft.com.au (dead website)  
 // Written by Nic Wilson nicw@bigpond.net.au  
